@@ -1,8 +1,19 @@
 <template>
   <div>
+    <the-header />
     <Nuxt />
   </div>
 </template>
+
+<script>
+import TheHeader from '~/components/header';
+
+export default {
+  components: {
+    TheHeader
+  }
+}
+</script>
 
 <style>
 html {
