@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <div class="header">
     <img  class="logo" src="~/assets/images/logo.png" alt="ロゴ">
     <ul class="nav_content">
       <li class="nav_btn">Top</li>
@@ -7,7 +7,7 @@
       <li class="nav_btn">Skill</li>
       <li class="nav_btn">Contact</li>
     </ul>
-  </header>
+  </div>
 </template>
 
 <script>
