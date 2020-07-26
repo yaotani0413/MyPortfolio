@@ -29,7 +29,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/node_modules/animate.css/animate.css', '~/node_modules/animate.css/animate.compat.css', '~/node_modules/animate.css/animate.min.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

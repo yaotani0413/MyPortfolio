@@ -1,6 +1,6 @@
 <template>
-  <section class="top">
-    <h1 class="top_title"><span class="greet">Hello World!</span><br>This is Yaotani's instruction manual</h1>
+  <section class="top" id="top_animation">
+    <h1 :class="top_title"><span class="greet">Hello World!</span><br>This is Yaotani's instruction manual</h1>
     <p class="drum">
       <button>GO!</button>
     </p>
@@ -8,6 +8,38 @@
 </template>
 
 <script>
+export default {
+  data() {
+    return{
+      positionY: 0,
+      positions: {
+        second: 0
+      }
+    }  
+  },
+  mounted() {
+    window.addEventListener('scroll', this.checkScroll)
+    this.positions = {
+      second : document.getElementById('top_animation').getBoundingClientRect().top
+    }
+    this.positionY++
+  },
+  methods: {
+    checkScroll() {
+      this.positionY = window.scrollY ? window.scrollY : window.pageYOffset
+    }
+  },
+  watch: {
+    position(to, from) {
+      const scrollOffset = to + 100
+      let el
+      if(this.positions.second <= scrollOffset) {
+        el = document.getElementById('top_animation')
+        el.setAttribute('class', 'animation')
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -4,17 +4,17 @@
     <div class="contact_container">
       <div class="contact_row">
         <div class="name_iptxt">
-            <input  class="name" type="text" placeholder="お名前">
+            <input type="text" class="name" placeholder="お名前">
         </div>
         <div class="mail_iptxt">
-            <input class="mail" type="text" placeholder="メールアドレス">
+            <input type="text" class="mail" placeholder="メールアドレス">
         </div>
       </div>
       <div class="comment_iptxt">
         <textarea class="comment" name="comment" id="" cols="30" rows="10" placeholder="コメント"></textarea>
       </div>
     </div>
-    <button class="send_btn" type="submit">SEND</button>
+    <button type="submit" class="send_btn">SEND</button>
   </section>
 </template>
 

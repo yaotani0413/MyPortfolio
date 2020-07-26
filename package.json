@@ -12,6 +12,7 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
+    "animate.css": "^4.1.0",
     "nuxt": "^2.13.0"
   },
   "devDependencies": {
