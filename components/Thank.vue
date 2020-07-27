@@ -1,7 +1,7 @@
 <template>
   <section class="thank">
-    <h1 class="thank_title">Thank you for watching!</h1>
-    <h3 class="thank_subtitle">〜Aiming for greater heights〜</h3>
+    <h1 class="thank_title animate__backInLeft animate__animated animate__slow">Thank you for watching!</h1>
+    <h3 class="thank_subtitle animate__backInRight animate__animated animate__slow">〜Aiming for greater heights〜</h3>
   </section>
 </template>
 

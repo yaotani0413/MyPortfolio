@@ -1,20 +1,20 @@
 <template>
   <section class="contact">
-    <h1 class="contact_title">Contact Me</h1>
+    <h1 class="contact_title animate__rotateInDownLeft animate__animated animate__slower">Contact Me</h1>
     <div class="contact_container">
       <div class="contact_row">
         <div class="name_iptxt">
-            <input type="text" class="name" placeholder="お名前">
+            <input type="text" class="name animate__fadeInLeft animate__animated animate__slow" placeholder="お名前">
         </div>
         <div class="mail_iptxt">
-            <input type="text" class="mail" placeholder="メールアドレス">
+            <input type="text" class="mail animate__fadeInRight animate__animated animate__slow" placeholder="メールアドレス">
         </div>
       </div>
       <div class="comment_iptxt">
-        <textarea class="comment" name="comment" id="" cols="30" rows="10" placeholder="コメント"></textarea>
+        <textarea class="comment animate__fadeInUp animate__animated animate__slow" name="comment" id="" cols="30" rows="10" placeholder="コメント"></textarea>
       </div>
     </div>
-    <button type="submit" class="send_btn">SEND</button>
+    <button type="submit" class="send_btn animate__fadeInUp animate__animated animate__delay-2s">SEND</button>
   </section>
 </template>
 

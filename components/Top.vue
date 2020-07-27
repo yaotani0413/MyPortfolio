@@ -1,8 +1,9 @@
 <template>
   <section class="top">
-      <h1 class="top_title"><span class="greet">Hello World!</span><br>This is Yaotani's instruction manual</h1>
+      <h1 class="top_title animate__rotateInDownLeft animate__animated animate__slower">Hello World!</h1>
+      <h4 class="top_subtitle animate__fadeInUp animate__animated animate__slow">This is Yaotani's instruction manual</h4>
     <p class="drum">
-      <button>GO!</button>
+      <button class="animate__heartBeat animate__animated animate__slower animate__infinite">GO!</button>
     </p>
   </section>
 </template>
@@ -25,15 +26,20 @@
 
 .top_title {
   margin: 0;
-  font-size: 2rem;
+  font-size: 4.2rem;
   text-align: center;
   text-shadow: 5px 5px 5px #808080; 
   letter-spacing: 1px;
   font-weight: bold;
 }
 
-.greet {
-  font-size: 4rem;
+.top_subtitle {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+  text-shadow: 5px 5px 5px #808080; 
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 
 .drum {
@@ -51,7 +57,7 @@
   left: 150px;
   cursor: pointer;
   color: #fff;
-  background-color: black;
+  background-color: transparent;
   border-radius: 50%;
   width: 135px;
   height: 135px;
