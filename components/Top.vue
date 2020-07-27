@@ -1,21 +1,29 @@
 <template>
   <section class="top">
-      <h1 class="top_title animate__rotateInDownLeft animate__animated animate__slower">Hello World!</h1>
-      <h4 class="top_subtitle animate__fadeInUp animate__animated animate__slow">This is Yaotani's instruction manual</h4>
+    <h1
+      class="top_title animate__rotateInDownLeft animate__animated animate__slower"
+    >
+      Hello World!
+    </h1>
+    <h4 class="top_subtitle animate__fadeInUp animate__animated animate__slow">
+      This is Yaotani's instruction manual
+    </h4>
     <p class="drum">
-      <button class="animate__heartBeat animate__animated animate__slower animate__infinite">GO!</button>
+      <button
+        class="animate__heartBeat animate__animated animate__slower animate__infinite"
+      >
+        GO!
+      </button>
     </p>
   </section>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style scoped>
-
 .top {
   height: 100vh;
-  background-color: #1BA1E2;
+  background-color: #1ba1e2;
   margin-top: 75px;
   display: flex;
   flex-direction: column;
@@ -28,7 +36,7 @@
   margin: 0;
   font-size: 4.2rem;
   text-align: center;
-  text-shadow: 5px 5px 5px #808080; 
+  text-shadow: 5px 5px 5px #808080;
   letter-spacing: 1px;
   font-weight: bold;
 }
@@ -37,7 +45,7 @@
   font-size: 2rem;
   margin: 0;
   text-align: center;
-  text-shadow: 5px 5px 5px #808080; 
+  text-shadow: 5px 5px 5px #808080;
   letter-spacing: 1px;
   font-weight: bold;
 }

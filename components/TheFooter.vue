@@ -1,11 +1,12 @@
 <template>
   <div class="footer">
-    <h6 class="copyright animate__fadeInRight animate__animated animate__slow">©︎ 2020 Atsushi Yaotani</h6>
+    <h6 class="copyright animate__fadeInRight animate__animated animate__slow">
+      ©︎ 2020 Atsushi Yaotani
+    </h6>
   </div>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style scoped>
 .footer {

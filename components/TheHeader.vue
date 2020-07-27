@@ -1,20 +1,27 @@
 <template>
   <div class="header">
-    <img  class="logo" src="~/assets/images/logo.png" alt="ロゴ">
+    <img class="logo" src="~/assets/images/logo.png" alt="ロゴ" />
     <ul class="nav_content">
-      <li class="nav_btn">Top</li>
-      <li class="nav_btn">About</li>
-      <li class="nav_btn">Skill</li>
-      <li class="nav_btn">Contact</li>
+      <li class="nav_btn">
+        Top
+      </li>
+      <li class="nav_btn">
+        About
+      </li>
+      <li class="nav_btn">
+        Skill
+      </li>
+      <li class="nav_btn">
+        Contact
+      </li>
     </ul>
   </div>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style scoped>
-  .header {
+.header {
   height: 75px;
   width: 100%;
   display: flex;
@@ -24,7 +31,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba( 255, 255, 255, 0.9 );
+  background-color: rgba(255, 255, 255, 0.9);
   color: #000000;
   z-index: 10;
   box-shadow: 0 0 5px 2px #808080;
