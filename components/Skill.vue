@@ -2,7 +2,7 @@
   <section class="skill">
     <h1 class="skill_title animate__rotateInDownLeft animate__animated animate__slower">My Skill Set</h1>
     <ul class="skill_set">
-      <li class="skill_content animate__fadeIn animate__animated">
+      <li class="skill_content animate__fadeIn animate__animated animate__slow">
         <span class="type">言語</span>・・・HTML / CSS / JavaScript
       </li>
       <li class="skill_content animate__fadeIn animate__animated">
