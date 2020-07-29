@@ -5,7 +5,10 @@
     >
       My Skill Set
     </h1>
-    <ul class="skill_set animate__fadeIn animate__animated animate__slow">
+    <ul
+      id="skill_set_animation"
+      class="skill_set animate__fadeIn animate__animated animate__slow"
+    >
       <li class="skill_content">
         <span class="type">言語</span>・・・HTML / CSS / JavaScript
       </li>
@@ -82,6 +85,11 @@
   width: 700px;
   background-color: #fff;
   box-shadow: 2px 2px 4px;
+}
+
+#skill_set_animation {
+  animation-duration: 2s; /* アニメーションの時間 */
+  animation-delay: 2s; /* アニメーション開始時間 */
 }
 
 .skill_content {
