@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "animate.css": "^4.1.0",
-    "nuxt": "^2.13.0"
+    "nuxt": "^2.13.0",
+    "vue-observe-visibility": "^0.4.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",

@@ -1,25 +1,73 @@
 <template>
   <section class="skill">
     <h1
-      class="skill_title animate__rotateInDownLeft animate__animated animate__slower"
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__rotateInDownLeft: isVisible01,
+        animate__animated: isVisible01,
+        animate__slower: isVisible01,
+      }"
+      class="skill_title"
     >
       My Skill Set
     </h1>
     <ul
-      id="skill_set_animation"
-      class="skill_set animate__fadeIn animate__animated animate__slow"
+      id="skill_set_animation1"
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__bounceIn: isVisible01,
+        animate__animated: isVisible01,
+        animate__slow: isVisible01,
+      }"
+      class="skill_set"
     >
-      <li class="skill_content">
+      <li
+        id="skill_set_animation1"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__bounceIn: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">言語</span>・・・HTML / CSS / JavaScript
       </li>
-      <li class="skill_content animate__fadeIn animate__animated">
+      <li
+        id="skill_set_animation2"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__bounceIn: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">フレームワーク、ライブラリ</span>・・・Vue.js /
         Nuxt.js
       </li>
-      <li class="skill_content animate__fadeIn animate__animated">
+      <li
+        id="skill_set_animation3"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__bounceIn: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">ツール</span>・・・Git / Firebase
       </li>
-      <li class="skill_content animate__fadeIn animate__animated">
+      <li
+        id="skill_set_animation4"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__bounceIn: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">OS</span>・・・Windows / Linux / MAC
       </li>
     </ul>
@@ -30,24 +78,28 @@
     </div>
     <ul class="product_description">
       <li>
-        <span class="type">アプリ名</span><br />
-        SAMPLE SNS
+        <span class="type">アプリ名</span>
+        <br />SAMPLE SNS
       </li>
       <li>
-        <span class="type">説明</span><br />
-        SNSにある機能の実装を目的としたアプリ
+        <span class="type">説明</span>
+        <br />SNSにある機能の実装を目的としたアプリ
       </li>
       <li>
-        <span class="type">機能</span><br />
-        ユーザーの登録 / ユーザー情報の編集 / ログイン / ログアウト / 投稿
+        <span class="type">機能</span>
+        <br />ユーザーの登録 / ユーザー情報の編集 / ログイン / ログアウト / 投稿
       </li>
       <li>
-        <span class="type">技術・使用ソフト</span><br />
-        Nuxt.js / JavaScript / HTML / CSS
+        <span class="type">技術・使用ソフト</span>
+        <br />Nuxt.js / JavaScript / HTML / CSS
       </li>
-      <li><span class="type">URL</span><br /></li>
       <li>
-        <span class="type">GitHub</span><br />
+        <span class="type">URL</span>
+        <br />
+      </li>
+      <li>
+        <span class="type">GitHub</span>
+        <br />
         <a href="https://github.com/yaotani0413/SAMPLE_Project">
           https://github.com/yaotani0413/SAMPLE_Project
         </a>
@@ -56,9 +108,45 @@
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      isVisible01: false,
+      isVisible02: false,
+    }
+  },
+  methods: {
+    visibilityChanged01(isVisible01, entry) {
+      this.isVisible01 = isVisible01
+      console.log(entry)
+    },
+    visibilityChanged02(isVisible02, entry) {
+      this.isVisible02 = isVisible02
+      console.log(entry)
+    },
+  },
+}
+</script>
 
 <style scoped>
+#skill_set_animation1 {
+  animation-duration: 0.5s; /* アニメーションの時間 */
+  animation-delay: 0.5s; /* アニメーション開始時間 */
+}
+#skill_set_animation2 {
+  animation-duration: 0.5s; /* アニメーションの時間 */
+  animation-delay: 0.6s; /* アニメーション開始時間 */
+}
+#skill_set_animation3 {
+  animation-duration: 0.5s; /* アニメーションの時間 */
+  animation-delay: 0.7s; /* アニメーション開始時間 */
+}
+#skill_set_animation4 {
+  animation-duration: 0.5s; /* アニメーションの時間 */
+  animation-delay: 0.8s; /* アニメーション開始時間 */
+}
+
 .skill {
   height: 100%;
   background-color: #1ba1e2;
@@ -85,11 +173,6 @@
   width: 700px;
   background-color: #fff;
   box-shadow: 2px 2px 4px;
-}
-
-#skill_set_animation {
-  animation-duration: 2s; /* アニメーションの時間 */
-  animation-delay: 2s; /* アニメーション開始時間 */
 }
 
 .skill_content {
