@@ -8,13 +8,8 @@
     <h4 class="top_subtitle animate__fadeInUp animate__animated animate__slow">
       This is Yaotani's instruction manual
     </h4>
-    <p class="drum">
-      <button
-        class="animate__heartBeat animate__animated animate__slower animate__infinite"
-      >
-        GO!
-      </button>
-    </p>
+    <div class="street moving"></div>
+    <img class="car suspention" src="~assets/images/car.png" alt="クルマ" />
   </section>
 </template>
 
@@ -22,7 +17,7 @@
 
 <style scoped>
 .top {
-  height: 100vh;
+  height: 90vh;
   background-color: #1ba1e2;
   margin-top: 75px;
   display: flex;
@@ -30,6 +25,51 @@
   justify-content: center;
   align-items: center;
   color: #fff;
+  position: relative;
+}
+
+.street {
+  background: url("~assets/images/street.png");
+  background-size: contain;
+  height: 360px;
+  width: 500%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.car {
+  width: 200px;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 120px;
+}
+
+@keyframes moving {
+  100% {
+    transform: translateX(-3000px);
+  }
+}
+
+@keyframes suspention {
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
+}
+
+.moving {
+  animation: moving 25s linear infinite;
+}
+
+.suspention {
+  animation: suspention 1s linear infinite;
 }
 
 .top_title {
@@ -48,35 +88,5 @@
   text-shadow: 5px 5px 5px #808080;
   letter-spacing: 1px;
   font-weight: bold;
-}
-
-.drum {
-  height: 450px;
-  width: 450px;
-  background-image: url(~assets/images/drum.png);
-  background-size: cover;
-  position: relative;
-}
-
-.drum button {
-  font-size: 2rem;
-  position: absolute;
-  top: 208px;
-  left: 150px;
-  cursor: pointer;
-  color: #fff;
-  background-color: transparent;
-  border-radius: 50%;
-  width: 135px;
-  height: 135px;
-  border: none;
-}
-
-.drum button:hover {
-  opacity: 0.8;
-}
-
-.drum button:focus {
-  outline: none;
 }
 </style>
