@@ -1,16 +1,55 @@
 <template>
   <section class="thank">
-    <h1 class="thank_title">Thank you for watching!</h1>
-    <h3 class="thank_subtitle">〜Aiming for greater heights〜</h3>
+    <h1
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__zoomIn: isVisible01,
+        animate__animated: isVisible01,
+        animate__slow: isVisible01,
+      }"
+      class="thank_title"
+    >
+      Thank you for watching!
+    </h1>
+    <h3
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__fadeIn: isVisible01,
+        animate__animated: isVisible01,
+        animate__slow: isVisible01,
+        'animate__delay-2s': isVisible01,
+      }"
+      class="thank_subtitle"
+    >
+      〜Aiming for greater heights〜
+    </h3>
   </section>
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      isVisible01: false,
+      isVisible02: false,
+    }
+  },
+  methods: {
+    visibilityChanged01(isVisible01, entry) {
+      this.isVisible01 = isVisible01
+      console.log(entry)
+    },
+    visibilityChanged02(isVisible02, entry) {
+      this.isVisible02 = isVisible02
+      console.log(entry)
+    },
+  },
+}
 </script>
 
 <style scoped>
 .thank {
-  background-color: #1BA1E2;
+  background-color: #1ba1e2;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -22,14 +61,14 @@
   color: #fff;
   text-align: center;
   font-size: 2rem;
-  text-shadow: 5px 5px 5px #808080; 
+  text-shadow: 5px 5px 5px #808080;
   letter-spacing: 1px;
   margin: 0;
 }
 
 .thank_subtitle {
   margin: 0;
-  text-shadow: 5px 5px 5px #808080; 
+  text-shadow: 5px 5px 5px #808080;
   letter-spacing: 1px;
   color: #fff;
 }

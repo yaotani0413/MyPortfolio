@@ -1,67 +1,126 @@
 <template>
   <section class="top">
-    <h1 class="top_title"><span class="greet">Hello World!</span><br>This is Yaotani's instruction manual</h1>
-    <p class="drum">
-      <button>GO!</button>
-    </p>
+    <h1
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__rotateInDownLeft: isVisible01,
+        animate__animated: isVisible01,
+        animate__slower: isVisible01,
+      }"
+      class="top_title"
+    >
+      Hello World!
+    </h1>
+    <h4
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__fadeInUp: isVisible01,
+        animate__animated: isVisible01,
+        animate__slow: isVisible01,
+      }"
+      class="top_subtitle"
+    >
+      This is Yaotani's instruction manual
+    </h4>
+    <div class="street moving"></div>
+    <img class="car suspention" src="~assets/images/car.png" alt="クルマ" />
   </section>
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      isVisible01: false,
+      isVisible02: false,
+    }
+  },
+  methods: {
+    visibilityChanged01(isVisible01, entry) {
+      this.isVisible01 = isVisible01
+      console.log(entry)
+    },
+    visibilityChanged02(isVisible02, entry) {
+      this.isVisible02 = isVisible02
+      console.log(entry)
+    },
+  },
+}
 </script>
 
 <style scoped>
 .top {
-  height: 100vh;
-  background-color: #1BA1E2;
+  overflow: hidden;
+  height: 93vh;
+  background-color: #1ba1e2;
   margin-top: 75px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #fff;
+  position: relative;
+}
+
+.street {
+  background: url("~assets/images/street.png");
+  background-size: contain;
+  height: 360px;
+  width: 500%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.car {
+  width: 200px;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 120px;
+}
+
+@keyframes moving {
+  100% {
+    transform: translateX(-3000px);
+  }
+}
+
+@keyframes suspention {
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
+}
+
+.moving {
+  animation: moving 25s linear infinite;
+}
+
+.suspention {
+  animation: suspention 1s linear infinite;
 }
 
 .top_title {
   margin: 0;
-  font-size: 2rem;
+  font-size: 4.2rem;
   text-align: center;
-  text-shadow: 5px 5px 5px #808080; 
+  text-shadow: 5px 5px 5px #808080;
   letter-spacing: 1px;
   font-weight: bold;
 }
 
-.greet {
-  font-size: 4rem;
-}
-
-.drum {
-  height: 450px;
-  width: 450px;
-  background-image: url(~assets/images/drum.png);
-  background-size: cover;
-  position: relative;
-}
-
-.drum button {
+.top_subtitle {
   font-size: 2rem;
-  position: absolute;
-  top: 208px;
-  left: 150px;
-  cursor: pointer;
-  color: #fff;
-  background-color: black;
-  border-radius: 50%;
-  width: 135px;
-  height: 135px;
-  border: none;
-}
-
-.drum button:hover {
-  opacity: 0.8;
-}
-
-.drum button:focus {
-  outline: none;
+  margin: 0;
+  text-align: center;
+  text-shadow: 5px 5px 5px #808080;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 </style>
