@@ -1,23 +1,48 @@
 <template>
   <section class="about">
     <h1
-      class="about_title animate__rotateInDownLeft animate__animated animate__slower"
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__rotateInDownLeft: isVisible01,
+        animate__animated: isVisible01,
+        animate__slower: isVisible01,
+      }"
+      class="about_title"
     >
       About me
     </h1>
     <div class="row">
       <div
-        class="blowing animate__fadeIn animate__animated animate__slow animate__delay-2s"
+        v-observe-visibility="visibilityChanged01"
+        :class="{
+          animate__fadeIn: isVisible01,
+          animate__animated: isVisible01,
+          animate__slow: isVisible01,
+          'animate__delay-2s': isVisible01,
+        }"
+        class="blowing"
       >
         <p>大学では軽音部で、<br />会長を務め、<br />ドラムを叩いてました！</p>
       </div>
       <img
-        class="photo animate__fadeInBottomLeft animate__animated animate__slow"
+        v-observe-visibility="visibilityChanged01"
+        :class="{
+          animate__fadeInBottomLeft: isVisible01,
+          animate__animated: isVisible01,
+          animate__slow: isVisible01,
+        }"
+        class="photo"
         src="~assets/images/my.JPG"
         alt="写真"
       />
       <p
-        class="introduce animate__fadeInBottomRight animate__animated animate__slow"
+        v-observe-visibility="visibilityChanged01"
+        :class="{
+          animate__fadeInBottomRight: isVisible01,
+          animate__animated: isVisible01,
+          animate__slow: isVisible01,
+        }"
+        class="introduce"
       >
         1994年4月13日生まれの26歳、大阪出身のエンジニア。<br />
         帝京大学経済学部経済学科を卒業し、某携帯会社の代理店へ就職。<br />
@@ -32,7 +57,26 @@
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      isVisible01: false,
+      isVisible02: false,
+    }
+  },
+  methods: {
+    visibilityChanged01(isVisible01, entry) {
+      this.isVisible01 = isVisible01
+      console.log(entry)
+    },
+    visibilityChanged02(isVisible02, entry) {
+      this.isVisible02 = isVisible02
+      console.log(entry)
+    },
+  },
+}
+</script>
 
 <style scoped>
 .about {

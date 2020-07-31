@@ -1,17 +1,51 @@
 <template>
   <section class="thank">
-    <h1 class="thank_title animate__backInLeft animate__animated animate__slow">
+    <h1
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__zoomIn: isVisible01,
+        animate__animated: isVisible01,
+        animate__slow: isVisible01,
+      }"
+      class="thank_title"
+    >
       Thank you for watching!
     </h1>
     <h3
-      class="thank_subtitle animate__backInRight animate__animated animate__slow"
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__fadeIn: isVisible01,
+        animate__animated: isVisible01,
+        animate__slow: isVisible01,
+        'animate__delay-2s': isVisible01,
+      }"
+      class="thank_subtitle"
     >
       〜Aiming for greater heights〜
     </h3>
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      isVisible01: false,
+      isVisible02: false,
+    }
+  },
+  methods: {
+    visibilityChanged01(isVisible01, entry) {
+      this.isVisible01 = isVisible01
+      console.log(entry)
+    },
+    visibilityChanged02(isVisible02, entry) {
+      this.isVisible02 = isVisible02
+      console.log(entry)
+    },
+  },
+}
+</script>
 
 <style scoped>
 .thank {

@@ -1,7 +1,13 @@
 <template>
   <section class="contact">
     <h1
-      class="contact_title animate__rotateInDownLeft animate__animated animate__slower"
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__rotateInDownLeft: isVisible01,
+        animate__animated: isVisible01,
+        animate__slower: isVisible01,
+      }"
+      class="contact_title"
     >
       Contact Me
     </h1>
@@ -10,14 +16,26 @@
         <div class="name_iptxt">
           <input
             type="text"
-            class="name animate__fadeInLeft animate__animated animate__slow"
+            v-observe-visibility="visibilityChanged01"
+            :class="{
+              animate__fadeInLeft: isVisible01,
+              animate__animated: isVisible01,
+              animate__slow: isVisible01,
+            }"
+            class="name"
             placeholder="お名前"
           />
         </div>
         <div class="mail_iptxt">
           <input
             type="text"
-            class="mail animate__fadeInRight animate__animated animate__slow"
+            v-observe-visibility="visibilityChanged01"
+            :class="{
+              animate__fadeInRight: isVisible01,
+              animate__animated: isVisible01,
+              animate__slow: isVisible01,
+            }"
+            class="mail"
             placeholder="メールアドレス"
           />
         </div>
@@ -25,7 +43,13 @@
       <div class="comment_iptxt">
         <textarea
           id=""
-          class="comment animate__fadeInUp animate__animated animate__slow"
+          v-observe-visibility="visibilityChanged01"
+          :class="{
+            animate__fadeInUp: isVisible01,
+            animate__animated: isVisible01,
+            animate__slow: isVisible01,
+          }"
+          class="comment"
           name="comment"
           cols="30"
           rows="10"
@@ -35,14 +59,39 @@
     </div>
     <button
       type="submit"
-      class="send_btn animate__fadeInUp animate__animated animate__delay-2s"
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__fadeInUp: isVisible01,
+        animate__animated: isVisible01,
+        'animate__delay-2s': isVisible01,
+      }"
+      class="send_btn"
     >
       SEND
     </button>
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      isVisible01: false,
+      isVisible02: false,
+    }
+  },
+  methods: {
+    visibilityChanged01(isVisible01, entry) {
+      this.isVisible01 = isVisible01
+      console.log(entry)
+    },
+    visibilityChanged02(isVisible02, entry) {
+      this.isVisible02 = isVisible02
+      console.log(entry)
+    },
+  },
+}
+</script>
 
 <style scoped>
 .contact {

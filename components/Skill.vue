@@ -15,7 +15,7 @@
       id="skill_set_animation1"
       v-observe-visibility="visibilityChanged01"
       :class="{
-        animate__bounceIn: isVisible01,
+        animate__fadeIn: isVisible01,
         animate__animated: isVisible01,
         animate__slow: isVisible01,
       }"
@@ -26,7 +26,7 @@
         v-observe-visibility="visibilityChanged02"
         class="skill_content"
         :class="{
-          animate__bounceIn: isVisible02,
+          animate__lightSpeedInRight: isVisible02,
           animate__animated: isVisible02,
           animate__slower: isVisible02,
         }"
@@ -38,7 +38,7 @@
         v-observe-visibility="visibilityChanged02"
         class="skill_content"
         :class="{
-          animate__bounceIn: isVisible02,
+          animate__lightSpeedInRight: isVisible02,
           animate__animated: isVisible02,
           animate__slower: isVisible02,
         }"
@@ -51,7 +51,7 @@
         v-observe-visibility="visibilityChanged02"
         class="skill_content"
         :class="{
-          animate__bounceIn: isVisible02,
+          animate__lightSpeedInRight: isVisible02,
           animate__animated: isVisible02,
           animate__slower: isVisible02,
         }"
@@ -63,7 +63,7 @@
         v-observe-visibility="visibilityChanged02"
         class="skill_content"
         :class="{
-          animate__bounceIn: isVisible02,
+          animate__lightSpeedInRight: isVisible02,
           animate__animated: isVisible02,
           animate__slower: isVisible02,
         }"
@@ -71,33 +71,104 @@
         <span class="type">OS</span>・・・Windows / Linux / MAC
       </li>
     </ul>
-    <div class="products">
+    <div
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__fadeIn: isVisible01,
+        animate__animated: isVisible01,
+        animate__slow: isVisible01,
+      }"
+      class="products"
+    >
       <img class="product" src="~assets/images/SNSApp1.png" alt="成果物" />
       <img class="right_img" src="~assets/images/right.png" alt="右矢印" />
       <img class="left_img" src="~assets/images/left.png" alt="左矢印" />
     </div>
-    <ul class="product_description">
-      <li>
+    <ul
+      id="skill_set_animation1"
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__fadeIn: isVisible01,
+        animate__animated: isVisible01,
+        animate__slower: isVisible01,
+      }"
+      class="product_description"
+    >
+      <li
+        id="skill_set_animation1"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__lightSpeedInRight: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">アプリ名</span>
         <br />SAMPLE SNS
       </li>
-      <li>
+      <li
+        id="skill_set_animation2"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__lightSpeedInRight: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">説明</span>
         <br />SNSにある機能の実装を目的としたアプリ
       </li>
-      <li>
+      <li
+        id="skill_set_animation3"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__lightSpeedInRight: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">機能</span>
         <br />ユーザーの登録 / ユーザー情報の編集 / ログイン / ログアウト / 投稿
       </li>
-      <li>
+      <li
+        id="skill_set_animation4"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__lightSpeedInRight: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">技術・使用ソフト</span>
         <br />Nuxt.js / JavaScript / HTML / CSS
       </li>
-      <li>
+      <li
+        id="skill_set_animation5"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__lightSpeedInRight: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">URL</span>
         <br />
       </li>
-      <li>
+      <li
+        id="skill_set_animation6"
+        v-observe-visibility="visibilityChanged02"
+        class="skill_content"
+        :class="{
+          animate__lightSpeedInRight: isVisible02,
+          animate__animated: isVisible02,
+          animate__slower: isVisible02,
+        }"
+      >
         <span class="type">GitHub</span>
         <br />
         <a href="https://github.com/yaotani0413/SAMPLE_Project">
@@ -136,15 +207,23 @@ export default {
 }
 #skill_set_animation2 {
   animation-duration: 0.5s; /* アニメーションの時間 */
-  animation-delay: 0.6s; /* アニメーション開始時間 */
+  animation-delay: 0.7s; /* アニメーション開始時間 */
 }
 #skill_set_animation3 {
   animation-duration: 0.5s; /* アニメーションの時間 */
-  animation-delay: 0.7s; /* アニメーション開始時間 */
+  animation-delay: 0.9s; /* アニメーション開始時間 */
 }
 #skill_set_animation4 {
   animation-duration: 0.5s; /* アニメーションの時間 */
-  animation-delay: 0.8s; /* アニメーション開始時間 */
+  animation-delay: 1.1s; /* アニメーション開始時間 */
+}
+#skill_set_animation5 {
+  animation-duration: 0.5s; /* アニメーションの時間 */
+  animation-delay: 1.3s; /* アニメーション開始時間 */
+}
+#skill_set_animation6 {
+  animation-duration: 0.5s; /* アニメーションの時間 */
+  animation-delay: 1.5s; /* アニメーション開始時間 */
 }
 
 .skill {

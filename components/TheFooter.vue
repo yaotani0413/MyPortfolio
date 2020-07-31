@@ -1,12 +1,39 @@
 <template>
   <div class="footer">
-    <h6 class="copyright animate__fadeInRight animate__animated animate__slow">
+    <h6
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__fadeInRight: isVisible01,
+        animate__animated: isVisible01,
+        animate__slow: isVisible01,
+      }"
+      class="copyright"
+    >
       ©︎ 2020 Atsushi Yaotani
     </h6>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      isVisible01: false,
+      isVisible02: false,
+    }
+  },
+  methods: {
+    visibilityChanged01(isVisible01, entry) {
+      this.isVisible01 = isVisible01
+      console.log(entry)
+    },
+    visibilityChanged02(isVisible02, entry) {
+      this.isVisible02 = isVisible02
+      console.log(entry)
+    },
+  },
+}
+</script>
 
 <style scoped>
 .footer {

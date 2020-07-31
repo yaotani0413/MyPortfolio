@@ -1,11 +1,25 @@
 <template>
   <section class="top">
     <h1
-      class="top_title animate__rotateInDownLeft animate__animated animate__slower"
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__rotateInDownLeft: isVisible01,
+        animate__animated: isVisible01,
+        animate__slower: isVisible01,
+      }"
+      class="top_title"
     >
       Hello World!
     </h1>
-    <h4 class="top_subtitle animate__fadeInUp animate__animated animate__slow">
+    <h4
+      v-observe-visibility="visibilityChanged01"
+      :class="{
+        animate__fadeInUp: isVisible01,
+        animate__animated: isVisible01,
+        animate__slow: isVisible01,
+      }"
+      class="top_subtitle"
+    >
       This is Yaotani's instruction manual
     </h4>
     <div class="street moving"></div>
@@ -13,7 +27,26 @@
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      isVisible01: false,
+      isVisible02: false,
+    }
+  },
+  methods: {
+    visibilityChanged01(isVisible01, entry) {
+      this.isVisible01 = isVisible01
+      console.log(entry)
+    },
+    visibilityChanged02(isVisible02, entry) {
+      this.isVisible02 = isVisible02
+      console.log(entry)
+    },
+  },
+}
+</script>
 
 <style scoped>
 .top {
