@@ -29,19 +29,19 @@ export default {
     },
     scrollAbout() {
       window.scroll({
-        top: 900,
+        top: 930,
         behavior: "smooth",
       })
     },
     scrollSkill() {
       window.scroll({
-        top: 1825,
+        top: 1855,
         behavior: "smooth",
       })
     },
     scrollContact() {
       window.scroll({
-        top: 3683,
+        top: 3713,
         behavior: "smooth",
       })
     },

@@ -51,7 +51,7 @@ export default {
 <style scoped>
 .top {
   overflow: hidden;
-  height: 90vh;
+  height: 93vh;
   background-color: #1ba1e2;
   margin-top: 75px;
   display: flex;
