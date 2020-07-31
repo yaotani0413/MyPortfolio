@@ -2,23 +2,52 @@
   <div class="header">
     <img class="logo" src="~/assets/images/logo.png" alt="ロゴ" />
     <ul class="nav_content">
-      <li class="nav_btn">
+      <li @click="scrollTop" class="nav_btn">
         Top
       </li>
-      <li class="nav_btn">
+      <li @click="scrollAbout" class="nav_btn">
         About
       </li>
-      <li class="nav_btn">
+      <li @click="scrollSkill" class="nav_btn">
         Skill
       </li>
-      <li class="nav_btn">
+      <li @click="scrollContact" class="nav_btn">
         Contact
       </li>
     </ul>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  methods: {
+    scrollTop() {
+      window.scroll({
+        top: 0,
+        behavior: "smooth",
+      })
+    },
+    scrollAbout() {
+      window.scroll({
+        top: 900,
+        behavior: "smooth",
+      })
+    },
+    scrollSkill() {
+      window.scroll({
+        top: 1825,
+        behavior: "smooth",
+      })
+    },
+    scrollContact() {
+      window.scroll({
+        top: 3683,
+        behavior: "smooth",
+      })
+    },
+  },
+}
+</script>
 
 <style scoped>
 .header {
