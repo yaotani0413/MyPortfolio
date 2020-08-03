@@ -1,6 +1,10 @@
 <template>
   <div class="header">
-    <img class="logo" src="~/assets/images/logo.png" alt="ロゴ" />
+    <img
+      class="logo"
+      src="https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436063/logo_hembq8.png"
+      alt="ロゴ"
+    />
     <ul class="nav_content">
       <li @click="scrollTop" class="nav_btn">
         Top

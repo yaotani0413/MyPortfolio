@@ -80,9 +80,21 @@
       }"
       class="products"
     >
-      <img class="product" src="~assets/images/SNSApp1.png" alt="成果物" />
-      <img class="right_img" src="~assets/images/right.png" alt="右矢印" />
-      <img class="left_img" src="~assets/images/left.png" alt="左矢印" />
+      <img
+        class="product"
+        src="https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436065/SNSApp1_o0tq2v.png"
+        alt="成果物"
+      />
+      <img
+        class="right_img"
+        src="https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436063/right_pfg2zw.png"
+        alt="右矢印"
+      />
+      <img
+        class="left_img"
+        src="https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436063/left_mbc5u0.png"
+        alt="左矢印"
+      />
     </div>
     <ul
       id="skill_set_animation1"
@@ -297,7 +309,7 @@ export default {
   width: 700px;
   height: 600px;
   margin-top: 100px;
-  background-image: url(~assets/images/PC.png);
+  background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436063/PC_mdh9ha.png);
   background-size: contain;
   position: relative;
   z-index: 1;
