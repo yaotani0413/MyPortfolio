@@ -32,7 +32,7 @@
           animate__slow: isVisible01,
         }"
         class="photo"
-        src="~assets/images/my.JPG"
+        src="https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436065/my_hvjqss.jpg"
         alt="写真"
       />
       <p
@@ -81,7 +81,7 @@ export default {
 <style scoped>
 .about {
   height: calc(100vh - 75px);
-  background-image: url(~assets/images/wallpaper.jpeg);
+  background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/wallpaper_jkmhga.jpg);
   background-size: contain;
   display: flex;
   flex-direction: column;
@@ -150,7 +150,6 @@ export default {
 .photo {
   height: 300px;
   border-radius: 50%;
-  /* border: solid 3px #1BA1E2; */
 }
 
 .introduce {

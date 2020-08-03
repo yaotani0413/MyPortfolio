@@ -96,7 +96,7 @@ export default {
 <style scoped>
 .contact {
   height: calc(100vh - 75px);
-  background-image: url(~assets/images/wallpaper.jpeg);
+  background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/wallpaper_jkmhga.jpg);
   background-size: contain;
   display: flex;
   flex-direction: column;

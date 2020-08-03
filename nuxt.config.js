@@ -16,14 +16,30 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: "Yaotani's Portfolio",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || "",
+        content: `ポートフォリオサイトです。自己紹介や使用スキル、成果物などを記載しています。`,
+      },
+      {
+        url: "og:https://yaosan.netlify.app/",
+        content: "ページのURL",
+      },
+      {
+        type: "website",
+        content: "ページの種類",
+      },
+      {
+        site_name: "ポートフォリオ",
+        content: "サイト名",
+      },
+      {
+        image: `https://res.cloudinary.com/djrmmyb4i/image/upload/v1596437382/thumbnail_noozn8.png`,
+        content: "サムネイル画像のURL",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],

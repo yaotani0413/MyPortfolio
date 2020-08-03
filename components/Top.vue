@@ -23,7 +23,11 @@
       This is Yaotani's instruction manual
     </h4>
     <div class="street moving"></div>
-    <img class="car suspention" src="~assets/images/car.png" alt="クルマ" />
+    <img
+      class="car suspention"
+      src="https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/car_xiyxbn.png"
+      alt="クルマ"
+    />
   </section>
 </template>
 
@@ -63,7 +67,7 @@ export default {
 }
 
 .street {
-  background: url("~assets/images/street.png");
+  background: url("https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/street_clsph2.png");
   background-size: contain;
   height: 360px;
   width: 500%;
