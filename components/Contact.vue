@@ -13,9 +13,14 @@
     </h1>
     <div class="contact_container">
       <div class="contact_row">
-        <div class="name_iptxt">
+        <form
+          class="name_iptxt"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+        >
           <input
-            type="text"
+            type="hidden"
             v-observe-visibility="visibilityChanged01"
             :class="{
               animate__fadeInLeft: isVisible01,
@@ -24,8 +29,10 @@
             }"
             class="name"
             placeholder="お名前"
+            name="form-name"
+            value="contact"
           />
-        </div>
+        </form>
         <div class="mail_iptxt">
           <input
             type="text"
