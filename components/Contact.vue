@@ -12,70 +12,83 @@
       Contact Me
     </h1>
     <div class="contact_container">
-      <div class="contact_row">
-        <form
-          class="name_iptxt"
-          name="contact"
-          method="POST"
-          data-netlify="true"
-        >
-          <input
-            type="hidden"
-            v-observe-visibility="visibilityChanged01"
-            :class="{
-              animate__fadeInLeft: isVisible01,
-              animate__animated: isVisible01,
-              animate__slow: isVisible01,
-            }"
-            class="name"
-            placeholder="お名前"
-            name="form-name"
-            value="contact"
-          />
-        </form>
-        <div class="mail_iptxt">
-          <input
-            type="text"
-            v-observe-visibility="visibilityChanged01"
-            :class="{
-              animate__fadeInRight: isVisible01,
-              animate__animated: isVisible01,
-              animate__slow: isVisible01,
-            }"
-            class="mail"
-            placeholder="メールアドレス"
-          />
+      <form
+        class="contact_form"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        @submit.prevent="onSubmit"
+        :class="sendingClass"
+      >
+        <div class="contact_row">
+          <div class="name_iptxt">
+            <input
+              type="text"
+              v-observe-visibility="visibilityChanged01"
+              :class="{
+                animate__fadeInLeft: isVisible01,
+                animate__animated: isVisible01,
+                animate__slow: isVisible01,
+              }"
+              id="username"
+              name="username"
+              v-model="username"
+              class="name"
+              placeholder="お名前"
+            />
+          </div>
+          <div class="mail_iptxt">
+            <input
+              type="text"
+              v-observe-visibility="visibilityChanged01"
+              :class="{
+                animate__fadeInRight: isVisible01,
+                animate__animated: isVisible01,
+                animate__slow: isVisible01,
+              }"
+              id="usermail"
+              name="usermail"
+              v-model="usermail"
+              class="mail"
+              placeholder="メールアドレス"
+            />
+          </div>
         </div>
-      </div>
-      <div class="comment_iptxt">
-        <textarea
-          id=""
+        <div class="comment_iptxt">
+          <textarea
+            id="message"
+            v-observe-visibility="visibilityChanged01"
+            :class="{
+              animate__fadeInUp: isVisible01,
+              animate__animated: isVisible01,
+              animate__slow: isVisible01,
+            }"
+            class="comment"
+            name="comment"
+            v-model="comment"
+            cols="30"
+            rows="10"
+            placeholder="コメント"
+          ></textarea>
+        </div>
+        <div class="contact_item" v-show="false">
+          <input type="text" name="bot-field" v-model="botField" />
+        </div>
+        <button
+          type="submit"
           v-observe-visibility="visibilityChanged01"
           :class="{
             animate__fadeInUp: isVisible01,
             animate__animated: isVisible01,
-            animate__slow: isVisible01,
+            'animate__delay-2s': isVisible01,
           }"
-          class="comment"
-          name="comment"
-          cols="30"
-          rows="10"
-          placeholder="コメント"
-        ></textarea>
-      </div>
+          class="send_btn"
+        >
+          SEND
+        </button>
+      </form>
     </div>
-    <button
-      type="submit"
-      v-observe-visibility="visibilityChanged01"
-      :class="{
-        animate__fadeInUp: isVisible01,
-        animate__animated: isVisible01,
-        'animate__delay-2s': isVisible01,
-      }"
-      class="send_btn"
-    >
-      SEND
-    </button>
   </section>
 </template>
 
@@ -119,6 +132,13 @@ export default {
 }
 
 .contact_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_form {
   display: flex;
   flex-direction: column;
   justify-content: center;
