@@ -20,6 +20,7 @@
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           :class="sendingClass"
+          netlify
           @submit.prevent="onSubmit"
         >
           <div class="contact_row">
