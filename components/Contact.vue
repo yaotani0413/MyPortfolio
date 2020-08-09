@@ -23,7 +23,11 @@
           @submit.prevent="onSubmit"
         >
           <div class="contact_row">
-            <validation-provider name="名前" rules="required">
+            <validation-provider
+              class="name_check"
+              name="お名前"
+              rules="required"
+            >
               <div slot-scope="ProviderProps" class="name_iptxt">
                 <input
                   id="username"
@@ -46,6 +50,7 @@
             </validation-provider>
             <validation-provider
               v-slot="{ errors }"
+              class="mail_check"
               rules="required|email|max:256"
               name="メールアドレス"
             >
@@ -116,9 +121,22 @@ export default {
       name: "",
       email: "",
       comment: "",
+      botField: "",
+      isSubmit: false,
+      isSending: false,
+      isError: false,
       isVisible01: false,
       isVisible02: false,
     }
+  },
+  computed: {
+    sendingClass() {
+      return {
+        "is-sending": this.isSending,
+        "is-error": this.isError,
+        "is-complete": this.isSubmit,
+      }
+    },
   },
   methods: {
     visibilityChanged01(isVisible01, entry) {
@@ -128,6 +146,34 @@ export default {
     visibilityChanged02(isVisible02, entry) {
       this.isVisible02 = isVisible02
       console.log(entry)
+    },
+    onSubmit() {
+      if (this.isSending) {
+        return
+      }
+      this.isSending = true
+      this.completeMessage = "送信処理中..."
+      const params = new URLSerchParams()
+      params.append("username", this.name)
+      params.append("usermail", this.mail)
+      params.append("comment", this.comment)
+      if (this.botField) {
+        params.append("bot^field", this.botField)
+      }
+      this.$axios
+        .$post("/", params)
+        .then(() => {
+          this.completeMessage = "お問い合わせを送信しました"
+          this.resetForrm()
+          this.isSubmit = true
+        })
+        .catch((err => {
+          this.completeMessage = "お問い合わせの送信が失敗しました"
+          this.isError = true
+        })
+        .finally(() => {
+          this.isSending = false
+        })
     },
   },
 }
@@ -169,13 +215,13 @@ export default {
   margin-top: 50px;
   width: 800px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .name_iptxt {
   position: relative;
-  width: 80%;
+  width: 500px;
   margin: 40px 3%;
 }
 
@@ -198,9 +244,17 @@ export default {
   cursor: text;
 }
 
+.name_check {
+  color: red;
+}
+
+.mail_check {
+  color: red;
+}
+
 .mail_iptxt {
   position: relative;
-  width: 80%;
+  width: 500px;
   margin: 40px 3%;
 }
 
