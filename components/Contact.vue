@@ -153,7 +153,7 @@ export default {
       }
       this.isSending = true
       this.completeMessage = "送信処理中..."
-      const params = new URLSerchParams()
+      const params = new URLSearchParams()
       params.append("username", this.name)
       params.append("usermail", this.mail)
       params.append("comment", this.comment)
@@ -167,7 +167,7 @@ export default {
           this.resetForrm()
           this.isSubmit = true
         })
-        .catch((err => {
+        .catch(() => {
           this.completeMessage = "お問い合わせの送信が失敗しました"
           this.isError = true
         })
