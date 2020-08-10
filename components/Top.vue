@@ -53,78 +53,234 @@ export default {
 </script>
 
 <style scoped>
-.top {
-  overflow: hidden;
-  height: 93vh;
-  background-color: #1ba1e2;
-  margin-top: 75px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  position: relative;
-}
+@media screen and (min-width: 767px) {
+  .top {
+    overflow: hidden;
+    height: 93vh;
+    background-color: #1ba1e2;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+  }
 
-.street {
-  background: url("https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/street_clsph2.png");
-  background-size: contain;
-  height: 360px;
-  width: 500%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
+  .street {
+    background: url("https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/street_clsph2.png");
+    background-size: contain;
+    height: 360px;
+    width: 500%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 
-.car {
-  width: 200px;
-  height: 80px;
-  position: absolute;
-  bottom: 0;
-  left: 120px;
-}
+  .car {
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 120px;
+  }
 
-@keyframes moving {
-  100% {
-    transform: translateX(-3000px);
+  @keyframes moving {
+    100% {
+      transform: translateX(-3000px);
+    }
+  }
+
+  @keyframes suspention {
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(3px);
+    }
+    0% {
+      transform: translateY(0px);
+    }
+  }
+
+  .moving {
+    animation: moving 25s linear infinite;
+  }
+
+  .suspention {
+    animation: suspention 1s linear infinite;
+  }
+
+  .top_title {
+    margin: 0;
+    font-size: 4.2rem;
+    text-align: center;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+
+  .top_subtitle {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    font-weight: bold;
   }
 }
 
-@keyframes suspention {
-  100% {
-    transform: translateY(0px);
+@media screen and (max-width: 767px) {
+  .top {
+    overflow: hidden;
+    height: calc(100vh - 75px);
+    background-color: #1ba1e2;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
   }
-  50% {
-    transform: translateY(3px);
+
+  .street {
+    background: url("https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/street_clsph2.png");
+    background-size: contain;
+    height: 360px;
+    width: 500%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
-  0% {
-    transform: translateY(0px);
+
+  .car {
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 120px;
+  }
+
+  @keyframes moving {
+    100% {
+      transform: translateX(-3000px);
+    }
+  }
+
+  @keyframes suspention {
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(3px);
+    }
+    0% {
+      transform: translateY(0px);
+    }
+  }
+
+  .moving {
+    animation: moving 25s linear infinite;
+  }
+
+  .suspention {
+    animation: suspention 1s linear infinite;
+  }
+
+  .top_title {
+    margin: 0;
+    font-size: 4.2rem;
+    text-align: center;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+
+  .top_subtitle {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    font-weight: bold;
   }
 }
 
-.moving {
-  animation: moving 25s linear infinite;
-}
+@media screen and (max-width: 479px) {
+  .top {
+    overflow: hidden;
+    height: calc(100vh - 75px);
+    background-color: #1ba1e2;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+  }
 
-.suspention {
-  animation: suspention 1s linear infinite;
-}
+  .street {
+    background: url("https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/street_clsph2.png");
+    background-size: cover;
+    height: 360px;
+    width: 500%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 
-.top_title {
-  margin: 0;
-  font-size: 4.2rem;
-  text-align: center;
-  text-shadow: 5px 5px 5px #808080;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
+  .car {
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+  }
 
-.top_subtitle {
-  font-size: 2rem;
-  margin: 0;
-  text-align: center;
-  text-shadow: 5px 5px 5px #808080;
-  letter-spacing: 1px;
-  font-weight: bold;
+  @keyframes moving {
+    100% {
+      transform: translateX(-5000px);
+    }
+  }
+
+  @keyframes suspention {
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(3px);
+    }
+    0% {
+      transform: translateY(0px);
+    }
+  }
+
+  .moving {
+    animation: moving 25s linear infinite;
+  }
+
+  .suspention {
+    animation: suspention 1s linear infinite;
+  }
+
+  .top_title {
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+
+  .top_subtitle {
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
 }
 </style>

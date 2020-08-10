@@ -48,28 +48,85 @@ export default {
 </script>
 
 <style scoped>
-.thank {
-  background-color: #1ba1e2;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@media screen and (min-width: 767px) {
+  .thank {
+    background-color: #1ba1e2;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .thank_title {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  .thank_subtitle {
+    margin: 0;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    color: #fff;
+  }
 }
 
-.thank_title {
-  color: #fff;
-  text-align: center;
-  font-size: 2rem;
-  text-shadow: 5px 5px 5px #808080;
-  letter-spacing: 1px;
-  margin: 0;
+@media screen and (max-width: 767px) {
+  .thank {
+    background-color: #1ba1e2;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .thank_title {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  .thank_subtitle {
+    margin: 0;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    color: #fff;
+  }
 }
 
-.thank_subtitle {
-  margin: 0;
-  text-shadow: 5px 5px 5px #808080;
-  letter-spacing: 1px;
-  color: #fff;
+@media screen and (max-width: 479px) {
+  .thank {
+    background-color: #1ba1e2;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .thank_title {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  .thank_subtitle {
+    margin: 0;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 0.5rem;
+  }
 }
 </style>

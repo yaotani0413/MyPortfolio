@@ -214,188 +214,513 @@ export default {
 
 <style scoped>
 #skill_set_animation1 {
-  animation-duration: 0.5s; /* アニメーションの時間 */
-  animation-delay: 0.5s; /* アニメーション開始時間 */
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
 }
 #skill_set_animation2 {
-  animation-duration: 0.5s; /* アニメーションの時間 */
-  animation-delay: 0.7s; /* アニメーション開始時間 */
+  animation-duration: 0.5s;
+  animation-delay: 0.7s;
 }
 #skill_set_animation3 {
-  animation-duration: 0.5s; /* アニメーションの時間 */
-  animation-delay: 0.9s; /* アニメーション開始時間 */
+  animation-duration: 0.5s;
+  animation-delay: 0.9s;
 }
 #skill_set_animation4 {
-  animation-duration: 0.5s; /* アニメーションの時間 */
-  animation-delay: 1.1s; /* アニメーション開始時間 */
+  animation-duration: 0.5s;
+  animation-delay: 1.1s;
 }
 #skill_set_animation5 {
-  animation-duration: 0.5s; /* アニメーションの時間 */
-  animation-delay: 1.3s; /* アニメーション開始時間 */
+  animation-duration: 0.5s;
+  animation-delay: 1.3s;
 }
 #skill_set_animation6 {
-  animation-duration: 0.5s; /* アニメーションの時間 */
-  animation-delay: 1.5s; /* アニメーション開始時間 */
+  animation-duration: 0.5s;
+  animation-delay: 1.5s;
 }
 
-.skill {
-  height: 100%;
-  background-color: #1ba1e2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@media screen and (min-width: 767px) {
+  .skill {
+    height: 100%;
+    background-color: #1ba1e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill_title {
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+
+  .skill_set {
+    margin: 0;
+    padding-left: 60px;
+    height: 300px;
+    width: 700px;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px;
+  }
+
+  .skill_content {
+    list-style: none;
+    padding-left: 24px;
+    position: relative;
+    margin-top: 35px;
+  }
+
+  .skill_content:before,
+  .skill_content:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+
+  .skill_content:before {
+    width: 17px;
+    height: 17px;
+    border-radius: 9px;
+    background: #1ba1e2;
+    left: 0;
+    top: 8px;
+  }
+
+  .skill_content:after {
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    width: 8px;
+    height: 5px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 4px;
+    top: 13px;
+  }
+
+  .type {
+    background: linear-gradient(transparent 60%, #ff0 0%);
+    font-size: 1.3rem;
+  }
+
+  .products {
+    width: 700px;
+    height: 600px;
+    margin-top: 100px;
+    background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436063/PC_mdh9ha.png);
+    background-size: contain;
+    position: relative;
+    z-index: 1;
+  }
+
+  .product {
+    position: absolute;
+    top: 42px;
+    left: 40px;
+    width: 620px;
+    height: 350px;
+    z-index: 1;
+  }
+
+  .right_img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 200px;
+    left: 570px;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .right_img:hover {
+    opacity: 0.8;
+  }
+
+  .left_img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 200px;
+    left: 70px;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .left_img:hover {
+    opacity: 0.8;
+  }
+
+  .product_description {
+    background-color: #fff;
+    width: 600px;
+    height: 500px;
+    box-shadow: 2px 2px 4px;
+    margin: 0;
+    line-height: 40px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+  }
+
+  .product_description li {
+    list-style: none;
+    padding-left: 24px;
+    position: relative;
+    margin-right: 20px;
+    margin-top: 8px;
+  }
+
+  .product_description li:before,
+  .product_description li:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+
+  .product_description li:before {
+    width: 17px;
+    height: 17px;
+    border-radius: 9px;
+    background: #1ba1e2;
+    left: 0;
+    top: 10px;
+  }
+
+  .product_description li:after {
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    width: 8px;
+    height: 5px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 4px;
+    top: 15px;
+  }
 }
 
-.skill_title {
-  color: #fff;
-  font-size: 4rem;
-  text-align: center;
-  text-shadow: 5px 5px 5px #808080;
-  letter-spacing: 1px;
-  margin-top: 150px;
-  margin-bottom: 50px;
+@media screen and (max-width: 767px) {
+  .skill {
+    height: 100%;
+    background-color: #1ba1e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill_title {
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+
+  .skill_set {
+    margin: 0;
+    padding-left: 60px;
+    height: 300px;
+    width: 700px;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px;
+  }
+
+  .skill_content {
+    list-style: none;
+    padding-left: 24px;
+    position: relative;
+    margin-top: 35px;
+  }
+
+  .skill_content:before,
+  .skill_content:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+
+  .skill_content:before {
+    width: 17px;
+    height: 17px;
+    border-radius: 9px;
+    background: #1ba1e2;
+    left: 0;
+    top: 8px;
+  }
+
+  .skill_content:after {
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    width: 8px;
+    height: 5px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 4px;
+    top: 13px;
+  }
+
+  .type {
+    background: linear-gradient(transparent 60%, #ff0 0%);
+    font-size: 1.3rem;
+  }
+
+  .products {
+    width: 700px;
+    height: 600px;
+    margin-top: 100px;
+    background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436063/PC_mdh9ha.png);
+    background-size: contain;
+    position: relative;
+    z-index: 1;
+  }
+
+  .product {
+    position: absolute;
+    top: 42px;
+    left: 40px;
+    width: 620px;
+    height: 350px;
+    z-index: 1;
+  }
+
+  .right_img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 200px;
+    left: 570px;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .right_img:hover {
+    opacity: 0.8;
+  }
+
+  .left_img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 200px;
+    left: 70px;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .left_img:hover {
+    opacity: 0.8;
+  }
+
+  .product_description {
+    background-color: #fff;
+    width: 600px;
+    height: 500px;
+    box-shadow: 2px 2px 4px;
+    margin: 0;
+    line-height: 40px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+  }
+
+  .product_description li {
+    list-style: none;
+    padding-left: 24px;
+    position: relative;
+    margin-right: 20px;
+    margin-top: 8px;
+  }
+
+  .product_description li:before,
+  .product_description li:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+
+  .product_description li:before {
+    width: 17px;
+    height: 17px;
+    border-radius: 9px;
+    background: #1ba1e2;
+    left: 0;
+    top: 10px;
+  }
+
+  .product_description li:after {
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    width: 8px;
+    height: 5px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 4px;
+    top: 15px;
+  }
 }
 
-.skill_set {
-  margin: 0;
-  padding-left: 60px;
-  height: 300px;
-  width: 700px;
-  background-color: #fff;
-  box-shadow: 2px 2px 4px;
-}
+@media screen and (max-width: 479px) {
+  .skill {
+    height: 100%;
+    background-color: #1ba1e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.skill_content {
-  list-style: none;
-  padding-left: 24px;
-  position: relative;
-  margin-top: 35px;
-}
+  .skill_title {
+    color: #fff;
+    font-size: 2.7rem;
+    text-align: center;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
 
-.skill_content:before,
-.skill_content:after {
-  content: "";
-  display: block;
-  position: absolute;
-}
+  .skill_set {
+    margin: 0;
+    padding-left: 20px;
+    height: 300px;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px;
+  }
 
-.skill_content:before {
-  width: 17px;
-  height: 17px;
-  border-radius: 9px;
-  background: #1ba1e2;
-  left: 0;
-  top: 8px;
-}
+  .skill_content {
+    list-style: none;
+    /* padding-left: 24px; */
+    position: relative;
+    /* margin-top: 35px; */
+  }
 
-.skill_content:after {
-  border-left: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  width: 8px;
-  height: 5px;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  left: 4px;
-  top: 13px;
-}
+  .skill_content:before,
+  .skill_content:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
 
-.type {
-  background: linear-gradient(transparent 60%, #ff0 0%);
-  font-size: 1.3rem;
-}
+  .skill_content:before {
+    width: 17px;
+    height: 17px;
+    border-radius: 9px;
+    background: #1ba1e2;
+    left: 0;
+    top: 8px;
+  }
 
-.products {
-  width: 700px;
-  height: 600px;
-  margin-top: 100px;
-  background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436063/PC_mdh9ha.png);
-  background-size: contain;
-  position: relative;
-  z-index: 1;
-}
+  .skill_content:after {
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    width: 8px;
+    height: 5px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 4px;
+    top: 13px;
+  }
 
-.product {
-  position: absolute;
-  top: 42px;
-  left: 40px;
-  width: 620px;
-  height: 350px;
-  z-index: 1;
-}
+  .type {
+    background: linear-gradient(transparent 60%, #ff0 0%);
+    font-size: 0.8rem;
+  }
 
-.right_img {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 200px;
-  left: 570px;
-  z-index: 2;
-  cursor: pointer;
-}
+  .products {
+    width: 300px;
+    height: 250px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436063/PC_mdh9ha.png);
+    background-size: contain;
+    position: relative;
+    z-index: 1;
+  }
 
-.right_img:hover {
-  opacity: 0.8;
-}
+  .product {
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    width: 262px;
+    height: 150px;
+    z-index: 1;
+  }
 
-.left_img {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 200px;
-  left: 70px;
-  z-index: 2;
-  cursor: pointer;
-}
+  .right_img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 90px;
+    left: 235px;
+    z-index: 2;
+    cursor: pointer;
+  }
 
-.left_img:hover {
-  opacity: 0.8;
-}
+  .right_img:hover {
+    opacity: 0.8;
+  }
 
-.product_description {
-  background-color: #fff;
-  width: 600px;
-  height: 500px;
-  box-shadow: 2px 2px 4px;
-  margin: 0;
-  line-height: 40px;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  padding-left: 20px;
-}
+  .left_img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 90px;
+    left: 40px;
+    z-index: 2;
+    cursor: pointer;
+  }
 
-.product_description li {
-  list-style: none;
-  padding-left: 24px;
-  position: relative;
-  margin-right: 20px;
-  margin-top: 8px;
-}
+  .left_img:hover {
+    opacity: 0.8;
+  }
 
-.product_description li:before,
-.product_description li:after {
-  content: "";
-  display: block;
-  position: absolute;
-}
+  .product_description {
+    background-color: #fff;
+    width: 90%;
+    height: 100%;
+    box-shadow: 2px 2px 4px;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+  }
 
-.product_description li:before {
-  width: 17px;
-  height: 17px;
-  border-radius: 9px;
-  background: #1ba1e2;
-  left: 0;
-  top: 10px;
-}
+  .product_description li {
+    list-style: none;
+    position: relative;
+  }
 
-.product_description li:after {
-  border-left: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  width: 8px;
-  height: 5px;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  left: 4px;
-  top: 15px;
+  .product_description li:before,
+  .product_description li:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+
+  .product_description li:before {
+    width: 17px;
+    height: 17px;
+    border-radius: 9px;
+    background: #1ba1e2;
+    left: 0;
+    top: 10px;
+  }
+
+  .product_description li:after {
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    width: 8px;
+    height: 5px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 4px;
+    top: 15px;
+  }
 }
 </style>
