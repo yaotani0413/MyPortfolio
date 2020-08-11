@@ -78,6 +78,8 @@ export default {
     },
   },
 }
+
+console.log("hei")
 </script>
 
 <style scoped>
