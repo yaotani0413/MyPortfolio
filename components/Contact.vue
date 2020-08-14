@@ -23,6 +23,7 @@
           netlify
           @submit.prevent="onSubmit"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <div class="contact_row">
             <validation-provider
               class="name_check"
@@ -181,150 +182,461 @@ export default {
 </script>
 
 <style scoped>
-.contact {
-  height: calc(100vh - 75px);
-  background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/wallpaper_jkmhga.jpg);
-  background-size: contain;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@media screen and (min-width: 767px) {
+  .contact {
+    height: calc(100vh - 75px);
+    background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/wallpaper_jkmhga.jpg);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact_title {
+    margin: 0;
+    font-size: 4rem;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+  }
+
+  .contact_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact_row {
+    margin-top: 50px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .name_iptxt {
+    position: relative;
+    width: 500px;
+    margin: 40px 3%;
+  }
+
+  .name {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    border-bottom: 2px solid #808080;
+    background: transparent;
+  }
+
+  .name:focus {
+    border-bottom: 2px solid #1ba1e2;
+    outline: none;
+    cursor: text;
+  }
+
+  .name_check {
+    color: red;
+  }
+
+  .mail_check {
+    color: red;
+  }
+
+  .mail_iptxt {
+    position: relative;
+    width: 500px;
+    margin: 40px 3%;
+  }
+
+  .mail {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    border-bottom: 2px solid #808080;
+    background: transparent;
+  }
+
+  .mail:focus {
+    border-bottom: 2px solid #1ba1e2;
+    outline: none;
+    cursor: text;
+  }
+
+  .comment_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 40px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .comment {
+    font: 18px/27px sans-serif;
+    box-sizing: border-box;
+    width: 50vw;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    border: 2px solid #808080;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .comment:focus {
+    border: 2px solid #1ba1e2;
+    outline: none;
+    cursor: text;
+  }
+
+  .send_btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #1ba1e2;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #1ba1e2;
+    border: dashed 1px #fff;
+    transition: 0.4s;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+
+  .send_btn:hover {
+    background: #1ba1e2;
+    box-shadow: 0px 0px 0px 5px #1ba1e2;
+    opacity: 0.8;
+  }
 }
 
-.contact_title {
-  margin: 0;
-  font-size: 4rem;
-  text-shadow: 5px 5px 5px #808080;
-  letter-spacing: 1px;
+@media screen and (max-width: 767px) {
+  .contact {
+    height: calc(100vh - 75px);
+    background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/wallpaper_jkmhga.jpg);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact_title {
+    margin: 0;
+    font-size: 4rem;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+  }
+
+  .contact_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact_form {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact_row {
+    margin-top: 50px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .name_iptxt {
+    position: relative;
+    width: 500px;
+    margin: 40px 3%;
+  }
+
+  .name {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    border-bottom: 2px solid #808080;
+    background: transparent;
+  }
+
+  .name:focus {
+    border-bottom: 2px solid #1ba1e2;
+    outline: none;
+    cursor: text;
+  }
+
+  .name_check {
+    color: red;
+  }
+
+  .mail_check {
+    color: red;
+  }
+
+  .mail_iptxt {
+    position: relative;
+    width: 500px;
+    margin: 40px 3%;
+  }
+
+  .mail {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    border-bottom: 2px solid #808080;
+    background: transparent;
+  }
+
+  .mail:focus {
+    border-bottom: 2px solid #1ba1e2;
+    outline: none;
+    cursor: text;
+  }
+
+  .comment_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 40px 3%;
+  }
+
+  .comment {
+    font: 18px/27px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    border: 2px solid #808080;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .comment:focus {
+    border: 2px solid #1ba1e2;
+    outline: none;
+    cursor: text;
+  }
+
+  .send_btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #1ba1e2;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #1ba1e2;
+    border: dashed 1px #fff;
+    transition: 0.4s;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+
+  .send_btn:hover {
+    background: #1ba1e2;
+    box-shadow: 0px 0px 0px 5px #1ba1e2;
+    opacity: 0.8;
+  }
 }
 
-.contact_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+@media screen and (max-width: 479px) {
+  .contact {
+    height: calc(130vh - 75px);
+    width: 100%;
+    background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/wallpaper_jkmhga.jpg);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.contact_form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .contact_title {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 5px 5px 5px #808080;
+    letter-spacing: 1px;
+    margin-top: 50px;
+  }
 
-.contact_row {
-  margin-top: 50px;
-  width: 800px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .contact_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.name_iptxt {
-  position: relative;
-  width: 500px;
-  margin: 40px 3%;
-}
+  .contact_form {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.name {
-  font: 15px/24px sans-serif;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.3em;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  color: black;
-  border: none;
-  border-bottom: 2px solid #808080;
-  background: transparent;
-}
+  .contact_row {
+    margin-top: 50px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.name:focus {
-  border-bottom: 2px solid #1ba1e2;
-  outline: none;
-  cursor: text;
-}
+  .name_iptxt {
+    position: relative;
+    width: 90vw;
+  }
 
-.name_check {
-  color: red;
-}
+  .name {
+    font: 12px/24px sans-serif;
+    box-sizing: border-box;
+    /* width: 100%; */
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    border-bottom: 2px solid #808080;
+    background: transparent;
+  }
 
-.mail_check {
-  color: red;
-}
+  .name:focus {
+    border-bottom: 2px solid #1ba1e2;
+    outline: none;
+    cursor: text;
+  }
 
-.mail_iptxt {
-  position: relative;
-  width: 500px;
-  margin: 40px 3%;
-}
+  .name_check {
+    color: red;
+    font: 12px/24px sans-serif;
+  }
 
-.mail {
-  font: 15px/24px sans-serif;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.3em;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  color: black;
-  border: none;
-  border-bottom: 2px solid #808080;
-  background: transparent;
-}
+  .mail_check {
+    color: red;
+    font: 12px/24px sans-serif;
+  }
 
-.mail:focus {
-  border-bottom: 2px solid #1ba1e2;
-  outline: none;
-  cursor: text;
-}
+  .mail_iptxt {
+    position: relative;
+    width: 90vw;
+  }
 
-.comment_iptxt {
-  position: relative;
-  width: 100%;
-  margin: 40px 3%;
-}
+  .mail {
+    font: 12px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    border-bottom: 2px solid #808080;
+    background: transparent;
+  }
 
-.comment {
-  font: 18px/27px sans-serif;
-  box-sizing: border-box;
-  width: 800px;
-  padding: 0.3em;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  color: black;
-  border: none;
-  border: 2px solid #808080;
-  background: rgba(255, 255, 255, 0.5);
-}
+  .mail:focus {
+    border-bottom: 2px solid #1ba1e2;
+    outline: none;
+    cursor: text;
+  }
 
-.comment:focus {
-  border: 2px solid #1ba1e2;
-  outline: none;
-  cursor: text;
-}
+  .comment_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 40px 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.send_btn {
-  display: inline-block;
-  text-decoration: none;
-  background: #1ba1e2;
-  color: #fff;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  border-radius: 50%;
-  text-align: center;
-  overflow: hidden;
-  box-shadow: 0px 0px 0px 5px #1ba1e2;
-  border: dashed 1px #fff;
-  transition: 0.4s;
-  outline: none;
-  cursor: pointer;
-  font-size: 1.4rem;
-}
+  .comment {
+    font: 14px/27px sans-serif;
+    box-sizing: border-box;
+    width: 90vw;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    border: 2px solid #808080;
+    background: rgba(255, 255, 255, 0.5);
+  }
 
-.send_btn:hover {
-  background: #1ba1e2;
-  box-shadow: 0px 0px 0px 5px #1ba1e2;
-  opacity: 0.8;
+  .comment:focus {
+    border: 2px solid #1ba1e2;
+    outline: none;
+    cursor: text;
+  }
+
+  .send_btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #1ba1e2;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #1ba1e2;
+    border: dashed 1px #fff;
+    transition: 0.4s;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.5rem;
+  }
+
+  .send_btn:hover {
+    background: #1ba1e2;
+    box-shadow: 0px 0px 0px 5px #1ba1e2;
+    opacity: 0.8;
+  }
 }
 </style>

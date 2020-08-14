@@ -36,17 +36,51 @@ export default {
 </script>
 
 <style scoped>
-.footer {
-  height: 75px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@media screen and (min-width: 767px) {
+  .footer {
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .copyright {
+    margin: 0;
+    margin-left: 50px;
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
 }
 
-.copyright {
-  margin: 0;
-  margin-left: 50px;
-  font-size: 0.9rem;
-  font-weight: normal;
+@media screen and (max-width: 767px) {
+  .footer {
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .copyright {
+    margin: 0;
+    margin-left: 50px;
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .footer {
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .copyright {
+    margin: 0;
+    margin-left: 30px;
+    font-size: 0.6rem;
+    font-weight: normal;
+  }
 }
 </style>
