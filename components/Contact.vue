@@ -23,6 +23,7 @@
           netlify
           @submit.prevent="onSubmit"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <div class="contact_row">
             <validation-provider
               class="name_check"
