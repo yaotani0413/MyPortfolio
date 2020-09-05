@@ -132,6 +132,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
   }
 
   .contact_title {
@@ -427,7 +428,7 @@ export default {
 
 @media screen and (max-width: 479px) {
   .contact {
-    height: calc(130vh - 75px);
+    height: calc(100vh - 75px);
     width: 100%;
     background-image: url(https://res.cloudinary.com/djrmmyb4i/image/upload/v1596436064/wallpaper_jkmhga.jpg);
     background-size: contain;
