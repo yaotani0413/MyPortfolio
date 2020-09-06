@@ -29,7 +29,7 @@ export default {
         content: `ポートフォリオサイトです。自己紹介や使用スキル、成果物などを記載しています。`,
       },
       {
-        url: "og:https://yaosan.netlify.app/",
+        url: "og:https://yao3s.netlify.app/",
         content: "ページのURL",
       },
       {
