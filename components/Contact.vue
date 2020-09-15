@@ -12,108 +12,115 @@
       Contact Me
     </h1>
     <div class="contact_container">
-      <validation-observer ref="obs">
-        <form
-          class="contact_form"
-          name="contact"
-          method="POST"
-          data-netlify="true"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <div class="contact_row">
-            <validation-provider
-              class="name_check"
-              name="お名前"
-              rules="required"
-            >
-              <div slot-scope="ProviderProps" class="name_iptxt">
-                <input
-                  id="username"
-                  v-model="username"
-                  v-observe-visibility="visibilityChanged01"
-                  type="text"
-                  :class="{
-                    animate__fadeInLeft: isVisible01,
-                    animate__animated: isVisible01,
-                    animate__slow: isVisible01,
-                  }"
-                  name="username"
-                  class="name"
-                  placeholder="お名前"
-                />
-                <p class="error">
-                  {{ ProviderProps.errors[0] }}
-                </p>
-              </div>
-            </validation-provider>
-            <validation-provider
-              v-slot="{ errors }"
-              class="mail_check"
-              rules="required|email|max:256"
-              name="メールアドレス"
-            >
-              <div class="mail_iptxt">
-                <input
-                  id="usermail"
-                  v-model="usermail"
-                  v-observe-visibility="visibilityChanged01"
-                  type="text"
-                  :class="{
-                    animate__fadeInRight: isVisible01,
-                    animate__animated: isVisible01,
-                    animate__slow: isVisible01,
-                  }"
-                  name="usermail"
-                  class="mail"
-                  placeholder="メールアドレス"
-                />
-                <p v-show="errors.length" class="p-contact__error">
-                  {{ errors[0] }}
-                </p>
-              </div>
-            </validation-provider>
-          </div>
-          <div class="comment_iptxt">
-            <textarea
-              id="message"
-              v-model="comment"
-              v-observe-visibility="visibilityChanged01"
-              :class="{
-                animate__fadeInUp: isVisible01,
-                animate__animated: isVisible01,
-                animate__slow: isVisible01,
-              }"
-              class="comment"
-              name="comment"
-              cols="30"
-              rows="10"
-              placeholder="コメント"
-            ></textarea>
-          </div>
-          <div v-show="false" class="contact_item"></div>
-          <button
+      <!-- <validation-observer ref="obs"> -->
+      <form
+        class="contact_form"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <!-- <div class="contact_row"> -->
+        <!-- <validation-provider
+            class="name_check"
+            name="お名前"
+            rules="required"
+          > -->
+        <div class="name_iptxt">
+          <input
+            id="username"
+            v-model="username"
             v-observe-visibility="visibilityChanged01"
-            type="submit"
+            type="text"
+            :class="{
+              animate__fadeInLeft: isVisible01,
+              animate__animated: isVisible01,
+              animate__slow: isVisible01,
+            }"
+            name="username"
+            class="name"
+            placeholder="お名前"
+          />
+          <!-- <p class="error">
+                {{ ProviderProps.errors[0] }}
+              </p> -->
+        </div>
+        <!-- </validation-provider> -->
+        <!-- <validation-provider -->
+        <!-- v-slot="{ errors }"
+            class="mail_check"
+            rules="required|email|max:256"
+            name="メールアドレス"
+          > -->
+        <div class="mail_iptxt">
+          <input
+            id="usermail"
+            v-model="usermail"
+            v-observe-visibility="visibilityChanged01"
+            type="text"
+            :class="{
+              animate__fadeInRight: isVisible01,
+              animate__animated: isVisible01,
+              animate__slow: isVisible01,
+            }"
+            name="usermail"
+            class="mail"
+            placeholder="メールアドレス"
+          />
+          <!-- <p v-show="errors.length" class="p-contact__error">
+                {{ errors[0] }}
+              </p> -->
+        </div>
+        <!-- </validation-provider> -->
+        <!-- </div> -->
+        <div class="comment_iptxt">
+          <textarea
+            id="message"
+            v-model="comment"
+            v-observe-visibility="visibilityChanged01"
             :class="{
               animate__fadeInUp: isVisible01,
               animate__animated: isVisible01,
-              'animate__delay-2s': isVisible01,
+              animate__slow: isVisible01,
             }"
-            class="send_btn"
-            :disabled="invalid || !validated"
-          >
-            SEND
-          </button>
-        </form>
-      </validation-observer>
+            class="comment"
+            name="comment"
+            cols="30"
+            rows="10"
+            placeholder="コメント"
+          ></textarea>
+        </div>
+        <!-- <div v-show="false" class="contact_item"></div> -->
+        <button
+          v-observe-visibility="visibilityChanged01"
+          type="button"
+          :class="{
+            animate__fadeInUp: isVisible01,
+            animate__animated: isVisible01,
+            'animate__delay-2s': isVisible01,
+          }"
+          class="send_btn"
+          :disabled="invalid || !validated"
+          @click="postMessage()"
+        >
+          SEND
+        </button>
+      </form>
+      <!-- </validation-observer> -->
     </div>
   </section>
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
   data() {
-    return {}
+    return {
+      username: "",
+      channel: "",
+      text: "",
+    }
   },
   methods: {
     visibilityChanged01(isVisible01, entry) {
@@ -123,6 +130,19 @@ export default {
     visibilityChanged02(isVisible02, entry) {
       this.isVisible02 = isVisible02
       console.log(entry)
+    },
+    async slack(text) {
+      const webhookUrl =
+        "https://hooks.slack.com/services/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"
+      const params = {
+        text: text,
+      }
+      const res = await axios.post(webhookUrl, params)
+      console.log(res)
+      return res.data
+    },
+    async postMessage() {
+      await this.slack("aaaaaa")
     },
   },
 }
