@@ -102,4 +102,12 @@ export default {
       "~": path.resolve(__dirname),
     },
   },
+  proxy: {
+    "/api": {
+      target: "https://hooks.slack.com",
+      pathRewrite: {
+        "^/api": "/",
+      },
+    },
+  },
 }

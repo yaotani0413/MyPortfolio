@@ -40,13 +40,11 @@ export default {
     }
   },
   methods: {
-    visibilityChanged01(isVisible01, entry) {
+    visibilityChanged01(isVisible01) {
       this.isVisible01 = isVisible01
-      console.log(entry)
     },
-    visibilityChanged02(isVisible02, entry) {
+    visibilityChanged02(isVisible02) {
       this.isVisible02 = isVisible02
-      console.log(entry)
     },
   },
 }

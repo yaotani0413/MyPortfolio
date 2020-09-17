@@ -25,7 +25,7 @@
             class="name_check"
             name="お名前"
             rules="required"
-          > -->
+        >-->
         <div class="name_iptxt">
           <input
             id="username"
@@ -43,7 +43,7 @@
           />
           <!-- <p class="error">
                 {{ ProviderProps.errors[0] }}
-              </p> -->
+          </p>-->
         </div>
         <!-- </validation-provider> -->
         <!-- <validation-provider -->
@@ -51,7 +51,7 @@
             class="mail_check"
             rules="required|email|max:256"
             name="メールアドレス"
-          > -->
+        >-->
         <div class="mail_iptxt">
           <input
             id="usermail"
@@ -69,7 +69,7 @@
           />
           <!-- <p v-show="errors.length" class="p-contact__error">
                 {{ errors[0] }}
-              </p> -->
+          </p>-->
         </div>
         <!-- </validation-provider> -->
         <!-- </div> -->
@@ -100,11 +100,11 @@
             'animate__delay-2s': isVisible01,
           }"
           class="send_btn"
-          :disabled="invalid || !validated"
           @click="postMessage()"
         >
           SEND
         </button>
+        <span @click="postMessage()">aaaaaaaaa</span>
       </form>
       <!-- </validation-observer> -->
     </div>
@@ -123,26 +123,31 @@ export default {
     }
   },
   methods: {
-    visibilityChanged01(isVisible01, entry) {
+    visibilityChanged01(isVisible01) {
       this.isVisible01 = isVisible01
-      console.log(entry)
     },
-    visibilityChanged02(isVisible02, entry) {
+    visibilityChanged02(isVisible02) {
       this.isVisible02 = isVisible02
-      console.log(entry)
     },
     async slack(text) {
       const webhookUrl =
-        "https://hooks.slack.com/services/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"
-      const params = {
+        "https://hooks.slack.com/services/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"
+      const data = {
         text: text,
       }
-      const res = await axios.post(webhookUrl, params)
-      console.log(res)
+      const res = axios.post(webhookUrl, JSON.stringify(data), {
+        withCredentials: false,
+        transformRequest: [
+          (data, headers) => {
+            delete headers.post["Content-Type"]
+            return data
+          },
+        ],
+      })
       return res.data
     },
     async postMessage() {
-      await this.slack("aaaaaa")
+      await this.slack("テストめっせーじ！！！！！！！！！！！！！！")
     },
   },
 }
