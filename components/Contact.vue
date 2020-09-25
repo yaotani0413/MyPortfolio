@@ -19,13 +19,13 @@
         method="POST"
         data-netlify="true"
       >
-        <input type="hidden" name="form-name" value="contact" />
-        <!-- <div class="contact_row"> -->
-        <!-- <validation-provider
+        <!-- <input type="hidden" name="form-name" value="contact" /> -->
+        <!-- <div class="contact_row">
+        <validation-provider
             class="name_check"
             name="お名前"
             rules="required"
-        >-->
+        > -->
         <div class="name_iptxt">
           <input
             id="username"
@@ -43,7 +43,7 @@
           />
           <!-- <p class="error">
                 {{ ProviderProps.errors[0] }}
-          </p>-->
+          </p> -->
         </div>
         <!-- </validation-provider> -->
         <!-- <validation-provider -->
@@ -104,7 +104,23 @@
         >
           SEND
         </button>
-        <span @click="postMessage()">aaaaaaaaa</span>
+        <modal
+          class="modal"
+          name="modal-content"
+          width="30%"
+          height="30%"
+          :scrollable="true"
+          :draggable="true"
+        >
+          <p class="modal-text">
+            {{ username }}様<br /><br />
+            ご連絡いただきありがとうございます。<br />
+            順番に確認しておりますので、<br />しばらくお待ちくださいますようお願いいたします。
+          </p>
+          <button class="hide modal-btn" @click="hide">
+            閉じる
+          </button>
+        </modal>
       </form>
       <!-- </validation-observer> -->
     </div>
@@ -118,11 +134,28 @@ export default {
   data() {
     return {
       username: "",
-      channel: "",
-      text: "",
+      usermail: "",
+      comment: "",
     }
   },
+  computed: {
+    text() {
+      return `
+      [お名前]： ${this.username}
+
+[連絡先]： ${this.usermail}
+
+[コメント]： ${this.comment}
+      `
+    },
+  },
   methods: {
+    show() {
+      this.$modal.show("modal-content")
+    },
+    hide() {
+      this.$modal.hide("modal-content")
+    },
     visibilityChanged01(isVisible01) {
       this.isVisible01 = isVisible01
     },
@@ -131,11 +164,11 @@ export default {
     },
     async slack(text) {
       const webhookUrl =
-        "https://hooks.slack.com/services/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"
+        "https://hooks.slack.com/services/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"
       const data = {
         text: text,
       }
-      const res = axios.post(webhookUrl, JSON.stringify(data), {
+      await axios.post(webhookUrl, JSON.stringify(data), {
         withCredentials: false,
         transformRequest: [
           (data, headers) => {
@@ -144,10 +177,10 @@ export default {
           },
         ],
       })
-      return res.data
     },
     async postMessage() {
-      await this.slack("テストめっせーじ！！！！！！！！！！！！！！")
+      await this.slack(this.text)
+      this.show()
     },
   },
 }
@@ -304,6 +337,19 @@ export default {
     background: #1ba1e2;
     box-shadow: 0px 0px 0px 5px #1ba1e2;
     opacity: 0.8;
+  }
+
+  .modal {
+    text-align: center;
+  }
+
+  .modal-text {
+    margin-top: 50px;
+  }
+
+  .modal-btn {
+    margin-top: 50px;
+    cursor: pointer;
   }
 }
 
