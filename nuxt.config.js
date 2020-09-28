@@ -79,7 +79,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/axios"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/dotenv"],
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
@@ -113,5 +113,8 @@ export default {
         "^/api": "/",
       },
     },
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || "http://localhost:3000",
   },
 }

@@ -163,8 +163,7 @@ export default {
       this.isVisible02 = isVisible02
     },
     async slack(text) {
-      const webhookUrl =
-        "https://hooks.slack.com/services/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"
+      const webhookUrl = process.env.BASE_URL
       const data = {
         text: text,
       }
