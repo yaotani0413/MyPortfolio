@@ -12,117 +12,117 @@
       Contact Me
     </h1>
     <div class="contact_container">
-      <!-- <validation-observer ref="obs"> -->
-      <form
-        class="contact_form"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-      >
-        <!-- <input type="hidden" name="form-name" value="contact" /> -->
-        <!-- <div class="contact_row">
-        <validation-provider
-            class="name_check"
-            name="お名前"
-            rules="required"
-        > -->
-        <div class="name_iptxt">
-          <input
-            id="username"
-            v-model="username"
+      <validation-observer ref="obs">
+        <form
+          class="contact_form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="contact_row">
+            <validation-provider
+              class="name_check"
+              name="お名前"
+              rules="required"
+            >
+              <div class="name_iptxt">
+                <input
+                  id="username"
+                  v-model="username"
+                  v-observe-visibility="visibilityChanged01"
+                  type="text"
+                  :class="{
+                    animate__fadeInLeft: isVisible01,
+                    animate__animated: isVisible01,
+                    animate__slow: isVisible01,
+                  }"
+                  name="username"
+                  class="name"
+                  placeholder="お名前"
+                />
+                <p class="error">
+                  {{ ProviderProps.errors[0] }}
+                </p>
+              </div>
+            </validation-provider>
+            <validation-provider
+              v-slot="{ errors }"
+              class="mail_check"
+              rules="required|email|max:256"
+              name="メールアドレス"
+            >
+              <div class="mail_iptxt">
+                <input
+                  id="usermail"
+                  v-model="usermail"
+                  v-observe-visibility="visibilityChanged01"
+                  type="text"
+                  :class="{
+                    animate__fadeInRight: isVisible01,
+                    animate__animated: isVisible01,
+                    animate__slow: isVisible01,
+                  }"
+                  name="usermail"
+                  class="mail"
+                  placeholder="メールアドレス"
+                />
+                <p v-show="errors.length" class="p-contact__error">
+                  {{ errors[0] }}
+                </p>
+              </div>
+            </validation-provider>
+          </div>
+          <div class="comment_iptxt">
+            <textarea
+              id="message"
+              v-model="comment"
+              v-observe-visibility="visibilityChanged01"
+              :class="{
+                animate__fadeInUp: isVisible01,
+                animate__animated: isVisible01,
+                animate__slow: isVisible01,
+              }"
+              class="comment"
+              name="comment"
+              cols="30"
+              rows="10"
+              placeholder="コメント"
+            ></textarea>
+          </div>
+          <div v-show="false" class="contact_item"></div>
+          <button
             v-observe-visibility="visibilityChanged01"
-            type="text"
-            :class="{
-              animate__fadeInLeft: isVisible01,
-              animate__animated: isVisible01,
-              animate__slow: isVisible01,
-            }"
-            name="username"
-            class="name"
-            placeholder="お名前"
-          />
-          <!-- <p class="error">
-                {{ ProviderProps.errors[0] }}
-          </p> -->
-        </div>
-        <!-- </validation-provider> -->
-        <!-- <validation-provider -->
-        <!-- v-slot="{ errors }"
-            class="mail_check"
-            rules="required|email|max:256"
-            name="メールアドレス"
-        >-->
-        <div class="mail_iptxt">
-          <input
-            id="usermail"
-            v-model="usermail"
-            v-observe-visibility="visibilityChanged01"
-            type="text"
-            :class="{
-              animate__fadeInRight: isVisible01,
-              animate__animated: isVisible01,
-              animate__slow: isVisible01,
-            }"
-            name="usermail"
-            class="mail"
-            placeholder="メールアドレス"
-          />
-          <!-- <p v-show="errors.length" class="p-contact__error">
-                {{ errors[0] }}
-          </p>-->
-        </div>
-        <!-- </validation-provider> -->
-        <!-- </div> -->
-        <div class="comment_iptxt">
-          <textarea
-            id="message"
-            v-model="comment"
-            v-observe-visibility="visibilityChanged01"
+            type="button"
             :class="{
               animate__fadeInUp: isVisible01,
               animate__animated: isVisible01,
-              animate__slow: isVisible01,
+              'animate__delay-2s': isVisible01,
             }"
-            class="comment"
-            name="comment"
-            cols="30"
-            rows="10"
-            placeholder="コメント"
-          ></textarea>
-        </div>
-        <!-- <div v-show="false" class="contact_item"></div> -->
-        <button
-          v-observe-visibility="visibilityChanged01"
-          type="button"
-          :class="{
-            animate__fadeInUp: isVisible01,
-            animate__animated: isVisible01,
-            'animate__delay-2s': isVisible01,
-          }"
-          class="send_btn"
-          @click="postMessage()"
-        >
-          SEND
-        </button>
-        <modal
-          class="modal"
-          name="modal-content"
-          width="30%"
-          height="30%"
-          :scrollable="true"
-          :draggable="true"
-        >
-          <p class="modal-text">
-            {{ username }}様<br /><br />
-            ご連絡いただきありがとうございます。<br />
-            順番に確認しておりますので、<br />しばらくお待ちくださいますようお願いいたします。
-          </p>
-          <button class="hide modal-btn" @click="hide">
-            閉じる
+            class="send_btn"
+            @click="postMessage()"
+          >
+            SEND
           </button>
-        </modal>
-      </form>
-      <!-- </validation-observer> -->
+          <modal
+            class="modal"
+            name="modal-content"
+            width="30%"
+            height="30%"
+            :scrollable="true"
+            :draggable="true"
+          >
+            <p class="modal-text">
+              {{ username }}様<br /><br />
+              ご連絡いただきありがとうございます。<br />
+              順番に確認しておりますので、<br />しばらくお待ちくださいますようお願いいたします。
+            </p>
+            <button class="hide modal-btn" @click="hide">
+              閉じる
+            </button>
+          </modal>
+        </form>
+      </validation-observer>
     </div>
   </section>
 </template>
@@ -136,6 +136,7 @@ export default {
       username: "",
       usermail: "",
       comment: "",
+      // error: "",
     }
   },
   computed: {
@@ -152,6 +153,7 @@ export default {
   methods: {
     show() {
       this.$modal.show("modal-content")
+      console.log(process.env.BASE_URL)
     },
     hide() {
       this.$modal.hide("modal-content")
