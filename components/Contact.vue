@@ -22,6 +22,7 @@
           <input type="hidden" name="form-name" value="contact" />
           <div class="contact_row">
             <validation-provider
+              v-slot="v"
               class="name_check"
               name="お名前"
               rules="required"
@@ -42,12 +43,12 @@
                   placeholder="お名前"
                 />
                 <p class="error">
-                  {{ ProviderProps.errors[0] }}
+                  {{ v.errors[0] }}
                 </p>
               </div>
             </validation-provider>
             <validation-provider
-              v-slot="{ errors }"
+              v-slot="v"
               class="mail_check"
               rules="required|email|max:256"
               name="メールアドレス"
@@ -67,8 +68,8 @@
                   class="mail"
                   placeholder="メールアドレス"
                 />
-                <p v-show="errors.length" class="p-contact__error">
-                  {{ errors[0] }}
+                <p class="p-contact__error">
+                  {{ v.errors[0] }}
                 </p>
               </div>
             </validation-provider>
@@ -136,7 +137,6 @@ export default {
       username: "",
       usermail: "",
       comment: "",
-      // error: "",
     }
   },
   computed: {
